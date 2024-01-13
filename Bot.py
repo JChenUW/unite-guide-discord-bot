@@ -7,7 +7,6 @@ import numpy as np
 import scraper
 import yt_dlp
 import ffmpeg
-import requests
 from discord.ext import commands
 
 load_dotenv()
