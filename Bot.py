@@ -133,4 +133,13 @@ async def tier(ctx):
             await ctx.channel.send('Please enter a valid Pokemon name after !tier')
 
 
+#sends message
+@bot.command()
+async def say(ctx):
+    if ctx.author==await bot.fetch_user(624670296909021184):
+        channel=await bot.fetch_channel(int(ctx.message.content[5:24]))
+        await channel.send(ctx.message.content[24:])
+    else:
+        await ctx.message.channel.send('You don\'t have permission to do that')
+
 bot.run(TOKEN)
