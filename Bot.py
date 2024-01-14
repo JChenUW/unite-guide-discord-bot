@@ -12,6 +12,7 @@ from discord.ext import commands
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD=os.getenv('DISCORD_GUILD')
+DEV=os.getenv('DEV')
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 
@@ -29,10 +30,10 @@ async def on_ready():
     members = [member.name for member in guild.members]
     print(f'guild members are {members}')
     #fetch my member class
-    dev=await bot.fetch_user(624670296909021184)
+    dev=await bot.fetch_user(DEV)
     # just for testing purposes
-    # await dev.create_dm()
-    # await dev.dm_channel.send(f'Hello {dev.mention}')
+    #await dev.create_dm()
+    #await dev.dm_channel.send(f'Hello {dev.mention}')
 
 #updates scraped data (runs scraper again)
 async def update_tier_list():
